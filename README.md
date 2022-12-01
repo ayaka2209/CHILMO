@@ -1,24 +1,34 @@
 # README
+## 開発言語
+* Ruby 3.0.1
+* Ruby on Rails 6.0.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 就業Termの技術
+* Devise
+* Ajax
 
-Things you may want to cover:
+## カリキュラム外の技術
+* gem rails_admin, gem cancancanを使った管理者機能
+* SimpleCalendar
 
-* Ruby version
+## 実行手順
 
-* System dependencies
+```
+$ git clone git@github.com:ayaka2209/original_app.git 
+$ cd CHILMO
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+```  
+## カタログ設計 
+https://docs.google.com/spreadsheets/d/1GIFf8tUgpVn1lQ9gzNSdFMrNYroTgPIGzhoj6KDM5sc/edit#gid=1947178936    
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## テーブル定義書  
+https://docs.google.com/spreadsheets/d/1GIFf8tUgpVn1lQ9gzNSdFMrNYroTgPIGzhoj6KDM5sc/edit#gid=1947178936    
+## ワイヤーフレーム 
+https://www.figma.com/file/xNuncxD8qo6AdRvqC2AmdA/%E7%84%A1%E9%A1%8C?node-id=4%3A23&t=R1jOr1EUTZf7YXgp-0    
+## ER図  
+![ER図](img/ER図.png) 
+### 画面遷移図
+![画面遷移](img/画面遷移.png) 

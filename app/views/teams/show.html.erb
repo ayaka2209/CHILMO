@@ -9,11 +9,6 @@
 
   <%= form_with(model: @attendance_book) do |f| %>
 
-  <div class="field">
-  <%= f.label :start_time, "日にち" %>
-  <%= f.date_field :start_time %>
-  </div>
-
     <% @team.kids.each_with_index do |kid, i| %>
       <h3><%= "園児#{i + 1}" %></h3>
       <div class="show">

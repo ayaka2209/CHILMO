@@ -11,21 +11,13 @@
   </head>
 
   <body>
-
     <% if user_signed_in? %>
+      <%= link_to "クラス一覧", teams_path %>
+      <%= link_to "出席一覧カレンダー", attendance_books_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "伝言板", posts_path %>
-
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
     <% end %>
 
     <%= yield %>

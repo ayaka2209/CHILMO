@@ -1,5 +1,9 @@
 <h1><%= t('.memo') %></h1>
 
+<%= form_with(url: posts_path, scope: :post, method: :get, local: true) do |form| %>
+  <%= form.label :検索 %>
+  <%= form.text_field :title %><br>
+  <%= form.submit"検索" %>
   <table>
     <thead>
       <tr>
@@ -8,8 +12,7 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-
-    <tbody>
+<% end %>
       <% @posts.each do |post| %>
         <% if post.user == current_user %>
         <tr>

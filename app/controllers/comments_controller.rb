@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   def edit
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
   private
   # ストロングパラメーター
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :post_id, :user_id)
   end
 end

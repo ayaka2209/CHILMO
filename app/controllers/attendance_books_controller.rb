@@ -28,6 +28,6 @@ class AttendanceBooksController < ApplicationController
   end
 
   def show
-    @attendancebook = attendancebooks.find(attendancebook_params)
+    @attendancebook = AttendanceBook.find(params[:id])
   end
 end

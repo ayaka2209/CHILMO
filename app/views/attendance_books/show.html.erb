@@ -1,0 +1,15 @@
+<div class="show">
+  <strong>出席簿</strong>
+  <p>クラス名: <%= @team.name %></p>
+
+  <% n = 0 %>
+  <% @kids.each do |kid|%>
+  <h3>園児名<%= n += 1 %></h3>
+<p>
+園児名:
+<%= kid.name %>
+</p>
+
+<% end %>
+    
+<div class="back"><%= link_to t('.back'), teams_path %></div>

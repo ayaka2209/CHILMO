@@ -10,14 +10,12 @@
 
     <tbody>
       <% @teams.each do |team| %>
-        <%# <% if team.user.families.first.id == current_user.families.first.id %>
         <tr>
           <td><%= team.name %></td>
           <td><%= link_to t('.show'), team_path(team) %></td>
           <td><%= link_to t('.edit'), edit_team_path(team) %></td>
           <td><%= link_to t('.delete'), team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-        <%# <% end %>
       <% end %>
     </tbody>
   </table>

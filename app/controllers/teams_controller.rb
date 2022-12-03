@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
 
   def show
     set_team
-    @attendancebook = Attendancebook.new
+    @attendancebook = AttendanceBook.new
     # @team.kids = Team.find(params[:id]).kid.name
   end
 

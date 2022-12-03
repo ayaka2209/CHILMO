@@ -1,0 +1,32 @@
+<div class="show">
+  <p>
+    <%= notice %>
+  </p>
+  <p>
+    <strong>クラス名:</strong>
+    <%= @team.name %>
+  </p>
+
+  <%= form_with(model: @attendancebook) do |f| %>
+
+  <div class="field">
+  <%= f.label :start_time, "日にち" %>
+  <%= f.date_field :start_time %>
+  </div>
+
+    <% @team.kids.each_with_index do |kid, i| %>
+      <h3><%= "園児#{i + 1}" %></h3>
+      <div class="show">
+        <p>
+          <strong>名前:</strong>
+          <%= kid.name %>
+          <%= f.select "#{kid.id}_attendance", [["出席", 1], ["欠席", 0]], include_blank: "選択して下さい", id: i %>
+          <%#= f.hidden_field :kid_id, value: kid.id %>
+        </p>
+      </div>
+    <% end %>
+    <%= f.hidden_field :team_id, value: @team.id %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<div class="back"><%= link_to t('.back'), teams_path %></div>

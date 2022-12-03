@@ -2,7 +2,18 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts
+      if params[:post].present?
+        title = params[:post][:title]
+      status = params[:post][:status]
+      if title.present? && status.present?
+        @posts = Post.title_and_status_search(title, status)
+      elsif title.present?
+        @posts = Post.search_title(title)
+      elsif status.present?
+        @posts = Post.search_status(status)
+      end
+    end
   end
 
   def show
@@ -20,7 +31,6 @@ class PostsController < ApplicationController
   def create
     # @post = Post.find(params[:id])
     @post = current_user.posts.build(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_url, notice: t('notice.create_posts') }
@@ -46,7 +56,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-
     respond_to do |format|
       format.html { redirect_to posts_url, notice: t('notice.delete_posts') }
       format.json { head :no_content }
@@ -60,6 +69,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:start_time, :remark, :user_id, :title)
+    params.require(:post).permit(:start_time, :remark, :user_id, :title, :status)
   end
 end

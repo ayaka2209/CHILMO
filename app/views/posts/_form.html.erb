@@ -24,6 +24,11 @@
     <%= form.text_area :remark, placeholder: "連絡事項" %>
   </div>
 
+  <div class="field">
+    <%= form.label :ステータス %>
+    <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
+  </div>
+
   <div class="actions">
     <%= form.submit "登録" %>
   </div>

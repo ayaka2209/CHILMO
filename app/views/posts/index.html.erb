@@ -7,7 +7,7 @@
   <%= form.label :ステータス %>
   <%= form.select :status, Post.statuses.keys.to_a, include_blank: true %><br>
   <%= form.submit"検索" %>
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th><%= t('.day') %></th>

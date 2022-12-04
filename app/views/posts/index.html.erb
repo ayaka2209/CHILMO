@@ -1,3 +1,4 @@
+<div class="user_info">
 <h1><%= t('.memo') %></h1>
 
 <%= form_with(url: posts_path, scope: :post, method: :get, local: true) do |form| %>
@@ -19,7 +20,7 @@
       <% @posts.each do |post| %>
         <% if post.user == current_user %>
         <tr>
-          <td><%= post.start_time %></td>
+          <td><%= post.start_time.strftime("%Y-%m-%d") %></td>
           <td><%= post.title %></td>
           <td><%= post.status %></td>
           <td><%= link_to t('.edit'), edit_post_path(post) %></td>

@@ -62,16 +62,16 @@
 //   background-position: center center;
 // }
 
-// .hero {
-  // background-image: url('./CHILMO.jpg');
-  // text-align: center;
-  // padding-top: 10vh;
-// }
+.hero {
+  background:image_tag('CHILMO_.jpg', size '612x380px');
+  text-align: center;
+  padding-top: 10vh;
+}
 
-// .title {
-  // font-size: 70px;
-  // font-family: 'Ribeye Marrow', cursive;
-// }
+.title {
+  font-size: 70px;
+  font-family: 'Ribeye Marrow', cursive;
+}
 
 // .container-fluid {
   // height: 115px;
@@ -168,12 +168,12 @@
 //   background: #ee3e52;
 // }
 
-// .signin {
-//   font-size: 20px;
-//   padding: 10px;
-//   margin: 20px;
-//   border-radius: 50px;
-// }
+.signin {
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 50px;
+}
 
 // .login {
 //   padding: 10px;

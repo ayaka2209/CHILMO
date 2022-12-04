@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "homes#index"
-
+  
+  resources :homes, only: %i[ index ]
   resources :attendance_books
 
   devise_for :users, controllers: {
+    sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
 

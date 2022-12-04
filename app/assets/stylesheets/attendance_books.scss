@@ -2,29 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .all {
+.all {
+  // position: relative;
+  // top: 50px;
+  left: 50px;
+}
+
+.calendar {
+  width: 90%;
+  text-align: center;
+  border: solid;
+  margin-top: 0;
+  left: 50px;
+  right: 50px;
+}
+
+// .calendar {
 //   position: relative;
+//   top: 50px;
+//   left: 50px;
+//   right: 50px;
 // }
 
-// .calendar {
-//   width: 65%;
-//   text-align: center;
-//   margin-top: 0;
-// }
+p {
+  font-size: 24px;
+  padding: 20px;
+}
 
-// .calendar {
-//   margin-left: 450px;
-// }
-
-// p {
-//   font-size: 24px;
-//   padding: 20px;
-// }
-
-// .date {
-//   font-size: 15px;
-//   text-align: left;
-// }
+.date {
+  font-size: 15px;
+  text-align: left;
+}
 
 // .calendar-title {
 //   font-size: 40px;

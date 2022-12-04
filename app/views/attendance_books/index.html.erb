@@ -1,9 +1,6 @@
 <div class="all">
-<p id="notice"><%= notice %></p>
 <h1 class="pickup">園児出席一覧カレンダー</h1>
 </div>
-<br>
-
 <p class="new_schedule">
 <h4>出席簿を入力するには、該当のクラス名をクリックしてください</h4>
 <% Team.all.each do |team| %>
@@ -12,8 +9,6 @@
   </div>
 <% end %>
 </p>
-
-<hr>
 <div class="calendar">
   <%= month_calendar events: @attendancebooks do |date, attendancebooks| %>
     <div class="date"><%= date.day %></div>

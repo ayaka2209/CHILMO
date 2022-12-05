@@ -1,3 +1,33 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgb(255, 205, 255);
+  color: #fff;
+  font-size: 10px;
+  border: 1px solid rgb(255, 205, 255);
+}
+
+// .user_info {
+//   text-align: center;
+//   border-style: dashed;
+//   border-color: rgb(255, 205, 255);
+//   padding: 30px;
+//   background: rgba(255, 205, 255, 0.5);
+//   border-radius: 20px;
+//   margin: 20px auto;
+//   margin-top: 200px;
+//   max-width: 550px;
+// }
+
+.user_info {
+  width: 70%;
+  height: 70%;
+  margin-left: 300px;
+  justify-content: center;
+  background: rgba(255,205,255, 0.5);
+  border-radius: 10px;
+}

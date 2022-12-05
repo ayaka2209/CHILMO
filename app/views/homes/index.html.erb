@@ -1,10 +1,10 @@
 <section class="hero">
   <h1 class="title">CHILMO</h1>
-  <p class="explain">。<br>
-    。<br>
+  
+  <p class="explain">
   </p>
     
-
+<%= image_tag("CHILMO.jpeg") %>
   <% unless user_signed_in? %>
     <button class= "signin"><%= link_to t('.sign_in'), new_user_registration_path %></button>
     <button class= "signin"><%= link_to t('.login'), new_user_session_path %> 

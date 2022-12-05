@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @posts = current_user.posts
       if params[:post].present?
         title = params[:post][:title]
-      status = params[:post][:status]
+        status = params[:post][:status]
       if title.present? && status.present?
         @posts = Post.title_and_status_search(title, status)
       elsif title.present?

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :require_role, only: %i[index show new edit create update destroy]
 
   def index
     @posts = current_user.posts
@@ -70,5 +71,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:start_time, :remark, :user_id, :title, :status)
+  end
+
+  def require_role
+    unless current_user.role?
+      flash[:notice] = "職員ではありません"
+      redirect_to attendance_books_path
+    end
   end
 end

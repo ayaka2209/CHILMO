@@ -1,5 +1,6 @@
 <h2><%= t('.look_team') %></h2>
   <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th><%= t('.team_name') %></th>
@@ -22,6 +23,6 @@
 
   <br>
 
-  <div class="button"><%= link_to t('.register_team'), new_team_path, class: "login" %>
+  <div class="actions"><%= link_to t('.register_team'), new_team_path, class: "login" %>
   <%# <%= link_to t('.出席簿'), attendancebooks_path, class: "login" %>
 </div>

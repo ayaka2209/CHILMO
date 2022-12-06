@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :teams do
     resources :kids
   end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

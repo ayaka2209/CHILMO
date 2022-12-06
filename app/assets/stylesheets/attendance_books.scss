@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .all {
-  // position: relative;
-  // top: 50px;
+  position: relative;
   left: 50px;
 }
 
@@ -13,16 +12,16 @@
   text-align: center;
   border: solid;
   margin-top: 0;
+  // left: 50px;
+  // right: 50px;
+}
+
+.calendar {
+  position: sticky;
+  top: 50px;
   left: 50px;
   right: 50px;
 }
-
-// .calendar {
-//   position: relative;
-//   top: 50px;
-//   left: 50px;
-//   right: 50px;
-// }
 
 // p {
 //   font-size: 24px;
@@ -128,9 +127,13 @@
 //   max-width: 400px;
 // }
 
-// .new_schedule {
-//   font-size: 30px;
-//   border-bottom: dotted 4px rgb(238, 76, 211);
-//   width: 410px;
-//   padding: 5px;
-// }
+.new_schedule {
+  font-size: 30px;
+  border-bottom: dotted 4px rgb(238, 76, 211);
+  width: 410px;
+  padding: 5px;
+}
+
+.plan-container {
+  margin-bottom: 2rem;
+}

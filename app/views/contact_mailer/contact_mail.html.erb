@@ -1,0 +1,5 @@
+<h1>朝の会の出欠確認が完了しました！</h1>
+
+<% @team.kids.each do |kid| %> 
+<h4><%= kid.name %>:<%= kid.attendance_books.order(updated_at: :desc).first.presence_or_absence %></h4>
+<% end %>

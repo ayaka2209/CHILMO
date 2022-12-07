@@ -34,23 +34,14 @@ ja:
   posts:
     form:
       back: "前の画面に戻る"
-      title: "クラス名"
-      remark: "連絡事項"
-      start_time: "日にち"
-      name: "職員名"
-      status: "ステータス"
     index:
-      name: "職員名"
       memo: "連絡事項"
       remark: "連絡事項"
       day: "日付"
-      start_time: "日にち"
-      title: "クラス名"
       show: "コメントする"
       content: "内容"
       edit: "ステータスを変更"
       delete: "削除"
-      status: "ステータス"
       register_memo: "連絡事項を登録する"
     edit:
       edit: "ステータス変更"
@@ -59,8 +50,6 @@ ja:
       remark: "連絡事項"
     new:
       remark: "連絡事項"
-      title: "クラス名"
-      start_time: "日にち"
   homes:
     index:
       sign_in: "新規登録"

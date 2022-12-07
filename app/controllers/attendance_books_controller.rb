@@ -1,5 +1,4 @@
 class AttendanceBooksController < ApplicationController
-  before_action :require_role, only:[:create, :new]
   def index
     @attendancebooks = AttendanceBook.all
     if params[:day_date] && params[:class_name]
@@ -32,14 +31,6 @@ class AttendanceBooksController < ApplicationController
       redirect_to attendance_books_path, notice: "出席確認できました！"
     else
       redirect_to team_path(id: team_id), notice: "もう一度確認してください！"
-    end
-  end
-  private
-
-  def require_role
-    unless current_user.role?
-      flash[:notice] = "申し訳ありません。職員のみアクセスできるページになっています。"
-      redirect_to attendance_books_path
     end
   end
 end

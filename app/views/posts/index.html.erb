@@ -19,7 +19,7 @@
     </thead>
 <% end %>
       <% @posts.each do |post| %>
-        <% if post.user == current_user %>
+        <% if post.user == current_user%>
         <tr>
           <td><%= post.start_time.strftime("%Y-%m-%d") %></td>
           <td><%= post.name %></td>

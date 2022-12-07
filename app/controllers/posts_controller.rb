@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :require_role, only: %i[index show new edit create update destroy]
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
       if params[:post].present?
         title = params[:post][:title]
         status = params[:post][:status]

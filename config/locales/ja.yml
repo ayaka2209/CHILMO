@@ -61,6 +61,7 @@ ja:
       remark: "連絡事項"
       title: "クラス名"
       start_time: "日にち"
+      name: "職員名"
   homes:
     index:
       sign_in: "新規登録"

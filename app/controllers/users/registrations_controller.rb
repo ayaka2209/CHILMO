@@ -55,15 +55,15 @@ protected
   # The path used after sign up.
   #サインアップ後の遷移先を指定
   def after_sign_up_path_for(resource)
-    user_path(current_user)
+    homes_path(current_user)
   end
 
   def after_update_path_for(resource)
-    user_path(current_user)
+    homes_path(current_user)
   end
 
   def ensure_normal_user
-    if resource.email == "guest@example.com" || resource.email == "guestadmin@example.com"
+    if resource.email == "guest@example.com" || resource.email == "admin_guest@example.com"
       redirect_to request.referer, alert: "ゲストユーザーの更新・削除はできません。"
     end
   end

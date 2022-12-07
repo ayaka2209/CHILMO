@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      post: 連絡事項
+    attributes:
+      post:
+        name: 職員名
+        remark: 連絡事項
+        start_time: 日にち
+        title: クラス名

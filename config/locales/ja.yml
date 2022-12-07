@@ -57,6 +57,9 @@ ja:
       title: "クラス名"
       back: "前の画面に戻る"
       remark: "連絡事項"
+      remark: "連絡事項"
+      start_time: "日にち"
+      name: "職員名"
     new:
       remark: "連絡事項"
       title: "クラス名"

@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:start_time, :remark, :user_id, :title, :status)
+    params.require(:post).permit(:start_time, :remark, :user_id, :title, :status, :name)
   end
 
   def require_role

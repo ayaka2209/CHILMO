@@ -5,4 +5,7 @@ class Post < ApplicationRecord
 	scope :search_title, -> (title){where("title LIKE?", "%#{title}%")}
   scope :search_status, -> (status){where(status:status)}
   enum status: { 未確認: 0, 確認済: 1, 完了:2 }
+  validates :start_time, presence: true
+  validates :title, presence: true
+  validates :remark, presence: true
 end

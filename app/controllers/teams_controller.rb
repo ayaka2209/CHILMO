@@ -60,7 +60,7 @@ before_action :require_role, only: %i[index show new edit create update destroy]
 
   def require_role
     unless current_user.role?
-      flash[:notice] = "職員ではありません"
+      flash[:notice] = "申し訳ありません。職員のみアクセスできるページになっています。"
       redirect_to attendance_books_path
     end
   end

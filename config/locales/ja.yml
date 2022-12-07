@@ -34,6 +34,9 @@ ja:
   posts:
     form:
       back: "前の画面に戻る"
+      title: "クラス名"
+      remark: "連絡事項"
+      start_time: "日にち"
     index:
       memo: "連絡事項"
       remark: "連絡事項"
@@ -50,6 +53,8 @@ ja:
       remark: "連絡事項"
     new:
       remark: "連絡事項"
+      title: "クラス名"
+      start_time: "日にち"
   homes:
     index:
       sign_in: "新規登録"

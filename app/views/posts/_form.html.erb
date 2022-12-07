@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :star_time %>
+    <%= form.label t('.start_time') %>
     <%= form.datetime_field :start_time %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label t('.name') %>
     <%= form.text_field :name, placeholder: "職員名を入力" %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label t('.title') %>
     <%= form.text_field :title, placeholder: "クラス名を入力" %>
   </div>
     
   <div class="field">
-    <%= form.label :remark %>
+    <%= form.label t('.remark') %>
     <%= form.text_area :remark, placeholder: "連絡事項" %>
   </div>
 
   <div class="field">
-    <%= form.label :ステータス %>
+    <%= form.label t('.status') %>
     <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
   </div>
 

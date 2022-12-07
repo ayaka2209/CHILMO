@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+before_action :require_role, only: %i[index show new edit create update destroy]
+
   def index
     @teams = Team.all
   end
@@ -54,5 +56,12 @@ class TeamsController < ApplicationController
 
   def set_team
     @team = Team.find(params[:id])
+  end
+
+  def require_role
+    unless current_user.role?
+      flash[:notice] = "申し訳ありません。職員のみアクセスできるページになっています。"
+      redirect_to attendance_books_path
+    end
   end
 end

@@ -1,20 +1,21 @@
 require 'rails_helper'
 RSpec.describe '連絡事項機能', type: :system do
-  let!(:second_user){FactoryBot.create(:second_user)}
-  let!(:post){FactoryBot.create(:post, user_id: second_user.id)}
+  # let!(:second_user){FactoryBot.create(:second_user)}
+  let!(:post){FactoryBot.create(:post)}
   describe '連絡事項CRUD機能' do 
     before do
       visit new_user_session_path
-      fill_in "user[email]",with: 'test2@example.com'
-      fill_in "user[password]",with: 'test2pass'
+      fill_in "user[email]",with: 'admin@example.com'
+      fill_in "user[password]",with: 'adminpass'
       click_on "commit"
     end
 
   context '連絡事項を入力した場合' do
     it '連絡事項が登録されている'
-      visit homes_pass
-      click_on "連絡"
-      fill_in 'post[start_time]', with: '002022-12-23T11:00'
+      visit new_post_path
+      # click_on "連絡"
+      select '002022-12-23T11:00', from: 'post[start_time]'
+      # fill_in 'post[start_time]', with: '002022-12-23T11:00'
       fill_in 'post[name]', with: 'test2'
       fill_in 'post[title]', with: 'ちゅうりっぷ'
       fill_in 'post[remark]', with: '欠席者'

@@ -22,10 +22,6 @@
 @use 'teams.scss';
 @use 'users.scss';
 
-html {
-  min-height: 100%;
-  position: relative;
-}
 
 // #menu {
   // width: 100%;
@@ -103,6 +99,8 @@ html {
 
 /* body */
 body {
+  min-height: 100vh;
+  position: relative;
   background: #fff;
   color: #5e5e5e;
   font: 400 87.5%/1.5em 'Open Sans', sans-serif;
@@ -228,13 +226,9 @@ img {
 //   margin-top: 30px;
 // }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 footer { 
-  // position: fixed;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -253,3 +247,7 @@ footer {
 // 	color: white;
 // 	text-align: center;
 // }
+
+.yield {
+  padding-bottom: 100px;
+}

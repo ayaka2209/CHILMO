@@ -19,9 +19,6 @@ RSpec.describe 'クラス一覧機能', type: :system do
         expect(page).to have_content '登録しました'
       end
     end
-    
-    # visit teams_path
-    # end
     context '「編集」をクリックすると' do
       it '園児名を追加することができる' do
         visit new_team_path
@@ -29,15 +26,23 @@ RSpec.describe 'クラス一覧機能', type: :system do
         fill_in 'team[kids_attributes][0][name]', with: 'kid1'
         click_on "登録"
         save_and_open_page
-        # click_on "前の画面に戻る"
-        
-        
-        class_list = find('.class_row')
         click_on "編集"
-        binding.irb
         fill_in 'team[kids_attributes][1][name]', with: 'kid2'
         click_on "登録"
-        expect(class_list[0]).to have_content 'kid2'
+        sleep(1)
+        expect(page).to have_content '編集しました。'
+      end
+    end
+    context '「クラスの削除」をクリックすると' do
+      it 'そのクラス名が一覧から削除されている' do
+        visit new_team_path
+        fill_in 'team[name]', with: 'team'
+        fill_in 'team[kids_attributes][0][name]', with: 'kid1'
+        click_on "登録"
+        save_and_open_page
+        click_on "クラスの削除"
+        page.accept_alert
+        expect(page).to have_content '削除しました。'
       end
     end
   end

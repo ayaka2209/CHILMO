@@ -2,8 +2,9 @@
 <h4>出席簿を入力するには、該当のクラス名をクリックしてください</h4>
 <% Team.all.each do |team| %>
   <div>
-<%# <div class="col-md-4"> %>
-    <strong><%= link_to "・#{team.name}", new_attendance_book_path(team_id: team) %></strong>
+    <% unless @done_attendance_kids & team.kids.pluck(:id) == team.kids.pluck(:id) %>
+      <strong><%= link_to "・#{team.name}", new_attendance_book_path(team_id: team) %></strong>
+    <% end %>
   </div>
 <% end %>
 <hr>
@@ -33,7 +34,9 @@
     </div>
 
   <% class_names.each do |class_name| %>
+    <div>
     <%= link_to "#{class_name}",
     attendance_books_path(class_name: "#{class_name}", day_date: "#{date}") %>
+    </div>
   <% end %>
 <% end %>

@@ -2,9 +2,40 @@ ja:
   activerecord:
     models:
       post: 連絡事項
+      user: ユーザー
+      comment: コメント
+      attendance_book: 出席簿
+      kid: 園児
+      team: クラス  
     attributes:
       post:
         name: 職員名
         remark: 連絡事項
-        start_time: 日にち
+        start time: 日にち
         title: クラス名
+        user: ユーザー
+    attributes:
+      attendance_book:
+        start_time: 日にち
+        presence_or_absence: 出欠
+    attributes:
+      comment:
+        content: コメント
+    attributes:
+      kid:
+        name: 園児名
+    attributes:
+      team:
+        name: クラス名
+      user:
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+        created_at: 作成日時
+        updated_at: 更新日時
+        role: 職員か保護者か
+        comments: コメント
+        posts: 連絡事項

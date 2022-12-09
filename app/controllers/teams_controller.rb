@@ -13,7 +13,7 @@ before_action :require_role, only: %i[index show new edit create update destroy]
 
   def new
     @team = Team.new
-    10.times { @team.kids.build }
+    5.times { @team.kids.build }
   end
 
   def edit

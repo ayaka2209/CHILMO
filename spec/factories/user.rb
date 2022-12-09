@@ -8,6 +8,7 @@ FactoryBot.define do
   end
 
   factory :second_user, class: User do
+    id {2}
     name { 'test2' }
     email { 'test2@example.com' }
     password { 'test2pass' }

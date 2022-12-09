@@ -10,7 +10,7 @@
 
     <tbody>
       <% @teams.each do |team| %>
-        <tr>
+        <tr class="class_row">
           <th><%= team.name %></th>
           <th><%= link_to t('.show'), team_path(team) %></th>
           <th><%= link_to t('.edit'), edit_team_path(team) %></th>

@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :team do
-    name { "team1" }
-  end
-
-  factory :second_team, class: Team do
-    name { "team2" }
+    association :kid
+    association :user
+    name { "team" }
+    # kid { FactoryBot.create(:kid)}
+    second_user { FactoryBot.create(:second_user)}
   end
 end

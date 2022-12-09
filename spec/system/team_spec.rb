@@ -27,12 +27,14 @@ RSpec.describe 'クラス一覧機能', type: :system do
         visit new_team_path
         fill_in 'team[name]', with: 'team'
         fill_in 'team[kids_attributes][0][name]', with: 'kid1'
+        click_on "登録"
         save_and_open_page
-        click_on "前の画面に戻る"
-        binding.irb
+        # click_on "前の画面に戻る"
+        
         
         class_list = find('.class_row')
         click_on "編集"
+        binding.irb
         fill_in 'team[kids_attributes][1][name]', with: 'kid2'
         click_on "登録"
         expect(class_list[0]).to have_content 'kid2'

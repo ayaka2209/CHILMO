@@ -2,6 +2,7 @@ class AttendanceBooksController < ApplicationController
   before_action :require_role, only:[:create, :new]
   def index
     @attendancebooks = AttendanceBook.all
+    @done_attendance_kids = AttendanceBook.where(start_time: Date.current).pluck(:kid_id)
     if params[:day_date] && params[:class_name]
       the_day_attendance_datas = AttendanceBook.where(start_time: params[:day_date])
       the_kids = Kid.where(team_id: "#{Team.find_by(name: params[:class_name]).id}")

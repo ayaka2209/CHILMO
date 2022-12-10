@@ -52,7 +52,7 @@ RSpec.describe '出席一覧カレンダー機能', type: :system do
       click_on 'commit'
       click_on "出席一覧カレンダー"
     end
-    context 'メニューバーの「」をクリックすると' do
+    context 'userテーブルのroleカラムがfalseのユーザーがカレンダー横にあるクラス名をクリックすると' do
       it '申し訳ありません。職員のみアクセスできるページになっていますと表示される' do
       click_on "・team"
       expect(page).to have_content '申し訳ありません。職員のみアクセスできるページになっています'

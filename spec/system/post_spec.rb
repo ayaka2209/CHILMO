@@ -61,7 +61,7 @@ RSpec.describe '連絡事項機能', type: :system do
       fill_in "user[password]",with: 'testpass'
       click_on 'commit'
     end
-    context 'メニューバーの「連絡」をクリックすると' do
+    context 'userテーブルのroleカラムがfalseのユーザーがメニューバーの「連絡」をクリックすると' do
       it '申し訳ありません。職員のみアクセスできるページになっていますと表示される' do
       click_on '連絡'
       expect(page).to have_content '申し訳ありません。職員のみアクセスできるページになっています'

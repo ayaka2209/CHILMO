@@ -144,7 +144,7 @@ kid19 = Kid.create!(
 )
 
               Post.create!(
-              start_time: "2022-12-23",
+              start_time: "2022-12-22",
               remark: "鈴木たかやくん14時に早お迎えとの事",
               name: "小林",
               title: "ちゅうりっぷ",
@@ -153,7 +153,7 @@ kid19 = Kid.create!(
               )
 
               Post.create!(
-              start_time: "2022-12-23",
+              start_time: "2022-12-22",
               remark: "菊池しょうたくん病院行くため遅刻",
               name: "井関",
               title: "ゆり",

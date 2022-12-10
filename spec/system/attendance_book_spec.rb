@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe '出席一覧カレンダー機能', type: :system do
   let!(:second_user){FactoryBot.create(:second_user)}
-  let!(:team){FactoryBot.create(:team, kid: kid)}
-  let!(:kid){FactoryBot.create(:kid, team: team)}
+  # let!(:team){FactoryBot.create(:team)}
+  # let!(:kid){FactoryBot.create(:kid)}
   describe '出席簿CRUD機能' do 
     before do
       visit new_user_session_path
@@ -10,11 +10,14 @@ RSpec.describe '出席一覧カレンダー機能', type: :system do
       fill_in "user[password]",with: 'test2pass'
       click_on "commit"
       click_on "出席一覧カレンダー"
-      binding.irb
     end
     context 'プルダウンで園児の出席を選択して「登録する」をクリックすると' do
       it 'カレンダーに出欠登録が終了したクラス名が表示される' do
+        # FactoryBot.create(:team)
+        # FactoryBot.create(:kid)
       visit new_attendance_book_path
+      binding.irb
+
       select '出席'
       click_on "commit"
       expect(page).to have_content 'team'

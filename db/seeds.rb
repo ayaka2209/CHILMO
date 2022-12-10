@@ -17,3 +17,9 @@ User.create!(name: "テスト",
               password: "aiueoa",
               role: "false"
               )
+
+              User.create!(name: "test1",
+              email: "test1@.example.com",
+              password: "aiueoa",
+              role: "false"
+              )

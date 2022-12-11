@@ -69,6 +69,16 @@ ja:
     index:
       sign_in: "新規登録"
       login: "ログイン"
+  teams:
+    edit:
+      edit: "クラス編集"
+    index:
+      look_team: "クラス一覧"
+      team_name: "クラス名"
+      show: "クラス名簿"      
+      edit: "編集"      
+      delete: "クラスの削除"      
+      register_team: "クラスの追加"      
   notice:
     create_users: "ユーザー登録が完了しました！"
     update_users: "ユーザー情報を更新しました！"

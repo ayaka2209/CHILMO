@@ -29,6 +29,6 @@ https://docs.google.com/spreadsheets/d/1Ms_XPI54QOrsMym3UtHoSeR-KYuhRaSSf3cv1jjt
 ## ワイヤーフレーム 
 https://www.figma.com/file/xNuncxD8qo6AdRvqC2AmdA/%E7%84%A1%E9%A1%8C?node-id=4%3A23&t=R1jOr1EUTZf7YXgp-0    
 ## ER図  
-![ER図](img/ER図.png) 
+https://app.diagrams.net/#G1f3YjbGV7tG-Iermxmufh8XcXZNfM8RIH
 ### 画面遷移図
 ![画面遷移](img/画面遷移.png) 

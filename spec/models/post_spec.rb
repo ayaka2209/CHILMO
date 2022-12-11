@@ -36,6 +36,7 @@ RSpec.describe Post, type: :model do
   describe 'postモデル機能', type: :model do
     describe '検索機能' do
       # 必要に応じて、テストデータの内容を変更して構わない
+      # let!(:second_user){FactoryBot.create(:second_user)}
       let!(:post) { FactoryBot.create(:post, title: "ちゅうりっぷ", status: '完了') }
       let!(:second_post) { FactoryBot.create(:second_post, title: "ゆり", status: '未確認') }
       context 'scopeメソッドでクラス名のあいまい検索をした場合' do

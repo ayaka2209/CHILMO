@@ -1,5 +1,5 @@
 <h1 class="all">園児出席一覧カレンダー</h1>
-<h4>出席簿を入力するには、該当のクラス名をクリックしてください</h4>
+<h5>出席簿を入力するには、該当のクラス名をクリックしてください。</h5>
 <% Team.all.each do |team| %>
   <div>
     <% unless @done_attendance_kids & team.kids.pluck(:id) == team.kids.pluck(:id) %>
@@ -40,3 +40,9 @@
     </div>
   <% end %>
 <% end %>
+
+<style>
+h1{
+  color: #9d32a8;
+}
+</style>

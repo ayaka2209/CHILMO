@@ -32,7 +32,7 @@
       <%# <%= f.collection_check_boxes(:attendancebooks_ids, Attendancebook.presence_or_absences, :id, :name_with_initial) %>
       <%# <%= f. form.select :@team.kids. Attendancebook.presence_or_absences.keys, {} %>
   <div class="actions">
-    <%= form.submit "登録" %>
+    <%= form.submit "登録", class: "btn btn-outline-success" %>
   </div>
   <%= link_to t('.back'), teams_path %>
 <% end %>

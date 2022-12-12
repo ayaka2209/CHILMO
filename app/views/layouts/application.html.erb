@@ -12,23 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Original+Surfer&family=Poiret+One&family=Ribeye+Marrow&display=swap" rel="stylesheet">  </head>
-  </head>
+  <%# </head> %>
 
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <% if user_signed_in? %>
-          <%= link_to image_tag(asset_path 'logo.png'), homes_path,  class: "navbar-brand" %>
-          <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> %>
-            <%# <span class="navbar-toggler-icon"></span> %>
-          </button>
+        <div class="container-fluid">
+          <% if user_signed_in? %>
+            <%= link_to image_tag(asset_path 'logo.png'), homes_path,  class: "navbar-brand" %>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <ul class="navbar-nav">
-            <li class="nav-item">
-              <% if current_user.present? && current_user.admin? %>
-                <%= link_to "管理者ページ", rails_admin_path, class: "nav-link" %>
-              <% end %>
-            </li>
+              <li class="nav-item">
+                <% if current_user.present? && current_user.admin? %>
+                  <%= link_to "管理者ページ", rails_admin_path, class: "nav-link" %>
+                <% end %>
+              </li>
               <li class="nav-item">
                 <%= link_to "クラス一覧", teams_path, class: "nav-link" %>
               </li>
@@ -41,8 +41,9 @@
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
               </li>
-        <% end %>
-      </div>
+            </ul>
+          <% end %>
+        </div>
       </nav>
     </header>
     <% if notice %>
@@ -52,11 +53,11 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <div class="yield">
-    <%= yield %>
+      <%= yield %>
     </div>
     
     <footer>
-        <p>© 2022 CHILMO </p>
+      <p>© 2022 CHILMO </p>
     </footer>
   </body>
 </html>

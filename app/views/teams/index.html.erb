@@ -1,27 +1,25 @@
 <h2><%= t('.look_team') %></h2>
   <table>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><%= t('.team_name') %></th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @teams.each do |team| %>
-        <tr class="class_row">
-          <th><%= team.name %></th>
-          <th><%= link_to t('.show'), team_path(team) %></th>
-          <th><%= link_to t('.edit'), edit_team_path(team) %></th>
-          <th><%= link_to t('.delete'), team, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t('.team_name') %></th>
           <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
+      </thead>
+
+      <tbody>
+        <% @teams.each do |team| %>
+          <tr class="class_row">
+            <th><%= team.name %></th>
+            <th><%= link_to t('.show'), team_path(team) %></th>
+            <th><%= link_to t('.edit'), edit_team_path(team) %></th>
+            <th><%= link_to t('.delete'), team, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+            <th colspan="3"></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </table>
-
   <br>
-
-  <div class="actions"><%= link_to t('.register_team'), new_team_path, class: "login" %>
-</div>
+  <div class="actions"><%= link_to t('.register_team'), new_team_path, class: "login" %></div>

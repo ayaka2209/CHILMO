@@ -11,7 +11,7 @@ ja:
       post:
         name: 職員名
         remark: 連絡事項
-        start time: 日にち
+        start_time: 日にち
         title: クラス名
         user: ユーザー
     attributes:

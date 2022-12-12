@@ -1,43 +1,44 @@
 <div class="user_info">
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "件のエラー") %> が発生したため送信されませんでした</h2>
-      <ul class="error">
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: post, local: true) do |form| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "件のエラー") %> が発生したため送信されませんでした</h2>
+        <ul class="error">
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label t('.start_time') %>
+      <%= form.datetime_field :start_time %>
+    </div>
+
+    <div class="field">
+      <%= form.label t('.name') %>
+      <%= form.text_field :name, placeholder: "職員名を入力" %>
+    </div>
+
+    <div class="field">
+      <%= form.label t('.title') %>
+      <%= form.text_field :title, placeholder: "クラス名を入力" %>
+    </div>
+    
+    <div class="field">
+      <%= form.label t('.remark') %>
+      <%= form.text_area :remark, placeholder: "連絡事項" %>
+    </div>
+
+    <div class="field">
+      <%= form.label t('.status') %>
+      <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "登録",class: "btn btn-outline-primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label t('.start_time') %>
-    <%= form.datetime_field :start_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label t('.name') %>
-    <%= form.text_field :name, placeholder: "職員名を入力" %>
-  </div>
-
-  <div class="field">
-    <%= form.label t('.title') %>
-    <%= form.text_field :title, placeholder: "クラス名を入力" %>
-  </div>
-    
-  <div class="field">
-    <%= form.label t('.remark') %>
-    <%= form.text_area :remark, placeholder: "連絡事項" %>
-  </div>
-
-  <div class="field">
-    <%= form.label t('.status') %>
-    <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
-  <div class="back"><%= link_to t('.back'), posts_path %></div>
+  <div class="back"><%= link_to t('.back'), posts_path,class: "btn btn-outline-secondary" %></div>
+</div>

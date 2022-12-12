@@ -17,6 +17,7 @@ gem "simple_calendar", "~> 2.4"
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+gem 'letter_opener_web'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -33,7 +34,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
-  gem 'letter_opener_web'
+  # gem 'letter_opener_web'
   
 end
 

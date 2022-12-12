@@ -1,6 +1,5 @@
 <section class="hero">
   <h1 class="title">CHILMO</h1>
-    
 <%= image_tag("CHILMO.jpg") %>
   <% unless user_signed_in? %>
     <button class= "signin"><%= link_to t('.sign_in'), new_user_registration_path %></button>

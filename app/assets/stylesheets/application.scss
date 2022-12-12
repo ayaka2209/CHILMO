@@ -58,7 +58,7 @@ h1 {
 }
 
 form {
-  padding: 0 1.5em;
+  padding: 1.5em;
 }
 
 .form-item {
@@ -129,14 +129,13 @@ footer {
   margin-top: 15px;
 }
 
-// header {
-// 	/* position: fixed; */
-// 	width: 100%;
-// 	background-color: brown;
-// 	color: white;
-// 	text-align: center;
-// }
-
 .yield {
   padding-bottom: 100px;
+}
+
+.header {
+  font-size: 20px;
+}
+.notice {
+  z-index: 1;
 }

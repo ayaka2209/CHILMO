@@ -14,7 +14,7 @@
 ## 実行手順
 
 ```
-$ git clone git@github.com:ayaka2209/original_app.git 
+$ git clone git@github.com:ayaka2209/CHILMO.git 
 $ cd CHILMO
 $ bundle install
 $ rails db:create

@@ -23,7 +23,6 @@ class AttendanceBooksController < ApplicationController
     team_id = params[:attendance_book][:team_id].to_i
     team = Team.find(team_id)
     # team.kid_ids #=> [13, 14] 
-    # byebug
     unless params[:attendance_book].values.include?("")
       team.kid_ids.each do |kid_id|
         attendance = params[:attendance_book]["#{kid_id}_attendance"].to_i

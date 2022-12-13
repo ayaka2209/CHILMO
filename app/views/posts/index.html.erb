@@ -25,14 +25,20 @@
             <td><%= post.name %></td>
             <td><%= post.title %></td>
             <td><%= post.status %></td>
-            <td><%= link_to t('.edit'), edit_post_path(post) %></td>
-            <td><%= link_to t('.show'), post_path(post) %></td>
-            <td><%= link_to t('.delete'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t('.edit'), edit_post_path(post), class: "btn btn-warning" %></td>
+            <td><%= link_to t('.show'), post_path(post), class: "btn btn-warning" %></td>
+            <td><%= link_to t('.delete'), post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   <% end %>
   <br>
-  <%= link_to t('.register_memo'), new_post_path, class: "btn btn-outline-primary" %>
+  <%= link_to t('.register_memo'), new_post_path, class: "btn btn-outline-success" %>
 </div>
+
+<style>
+h1{
+  color: #9d32a8;
+}
+</style>

@@ -1,10 +1,14 @@
 <div class="show">
-  <strong>クラス名簿</strong>
-  <p>クラス名: <%= @team.name %></p>
+  <h5>クラス名: <%= @team.name %></h5>
   <% n = 0 %>
   <% @kids.each do |kid|%>
-    <h3>園児名<%= n += 1 %></h3>
-    <p>園児名: <%= kid.name %></p>
+    <h5>園児名<%= n += 1 %></h5>
+    <h4>園児名: <%= kid.name %></h4>
   <% end %>
   <div class="back"><%= link_to t('.back'), teams_path %></div>
 </div>
+<style>
+h5{
+  color: #7ea2e6;
+}
+</style>

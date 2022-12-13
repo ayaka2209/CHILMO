@@ -1,6 +1,7 @@
-<div class="user_info">
+<div class="container">
   <h1><%= t('.memo') %></h1>
-
+</div>
+<div class="user_info">
   <%= form_with(url: posts_path, scope: :post, method: :get, local: true) do |form| %>
     <%= form.label :検索 %>
     <%= form.text_field :title, placeholder: "クラス名で検索"%><br>
@@ -39,6 +40,10 @@
 
 <style>
 h1{
-  color: #9d32a8;
+  color: rgba(0, 0, 0, 0.5);;
+  margin-top: 0.5em;
+}
+.container{
+  background-color: #fae8f7;;
 }
 </style>

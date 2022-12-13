@@ -18,14 +18,12 @@
   <div><strong><%= @team_name %></strong></div>
   <% @attendancebooks_teams&.each do |attendancebook| %>
     <div>
-      <%= Kid.find_by(id: attendancebook.kid_id).name %>
+      <strong><%= Kid.find_by(id: attendancebook.kid_id).name %></strong>
       <%= attendancebook.presence_or_absence %>
     </div>
   <% end %>
-    <%# <% byebug %>
 </tbody>
-  <%# <%= link_to "欠席者", attendance_books_path(sort_presence_or_absence: true,day_date:@day_date,class_name:@team_name), class: "btn btn-warning" %>
-  <%= link_to "欠席者", attendance_books_path(sort_presence_or_absence: true), class: "btn btn-warning" %>
+<%= link_to "欠席者を上にソートする", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
 
 <hr>
 <div class="calendar">

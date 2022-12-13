@@ -14,13 +14,23 @@ RSpec.describe '出席一覧カレンダー機能', type: :system do
       fill_in 'team[kids_attributes][0][name]', with: 'kid1'
       click_on "登録"
       click_on "出席一覧カレンダー"
+      
     end
     context 'プルダウンで園児の出席を選択して「登録する」をクリックすると' do
       it 'カレンダーに出欠登録が終了したクラス名が表示される' do
       click_on "・team"
+      select '欠席'
       select '出席'
       click_on "commit"
-      expect(page).to have_content 'team'
+      # binding.irb
+      expect(page).to have_content '出席確認できました'
+      end
+    end
+    context 'プルダウンで園児の出席を選択せずに「登録する」をクリックすると' do
+      it '「もう一度確認してください！」と表示される' do
+      click_on "・team"
+      click_on "commit"
+      expect(page).to have_content 'もう一度確認してください！'
       end
     end
     context 'カレンダーに表示されているクラス名をクリックすると' do

@@ -3,7 +3,7 @@
 
   <%= form_with(url: posts_path, scope: :post, method: :get, local: true) do |form| %>
     <%= form.label :検索 %>
-    <%= form.text_field :title %><br>
+    <%= form.text_field :title, placeholder: "クラス名で検索"%><br>
     <%= form.label :ステータス %>
     <%= form.select :status, Post.statuses.keys.to_a, include_blank: true %><br>
     <%= form.submit"検索" %>

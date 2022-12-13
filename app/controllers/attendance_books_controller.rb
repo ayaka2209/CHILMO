@@ -9,16 +9,11 @@ class AttendanceBooksController < ApplicationController
       @attendancebooks_teams = the_day_attendance_datas.where(kid_id: the_kids)
       @day_date = params[:day_date]
       @team_name = params[:class_name]
-    # elsif params[:sort_presence_or_absence]
-    #   the_day_attendance_datas = AttendanceBook.where(start_time: params[:day_date])
-    #   the_kids = Kid.where(team_id: "#{Team.find_by(name: params[:class_name]).id}")
-    #   @attendancebooks_teams = the_day_attendance_datas.where(kid_id: the_kids)
-    #   @day_date = params[:day_date]
-    #   @team_name = params[:class_name]
-    #   @attendancebooks_teams_solt = @attendancebooks_teams.sort_presence_or_absence
-
-      # the_day_attendance_datas = AttendanceBook.where(start_time: params[:day_date])
-      # @attendancebooks_teams = the_day_attendance_datas.where(kid_id: the_kids)
+    end
+    if params[:sort_absence] == "true"
+      the_day_attendance_datas = AttendanceBook.where(start_time: params[:day_date])
+      the_kids = Kid.where(team_id: Team.find_by(name: params[:class_name]))
+      @attendancebooks_teams = the_day_attendance_datas.where(kid_id: the_kids).sort_presence_or_absence
     end
   end
 

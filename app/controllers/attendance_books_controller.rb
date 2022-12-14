@@ -10,6 +10,7 @@ class AttendanceBooksController < ApplicationController
       @day_date = params[:day_date]
       @team_name = params[:class_name]
     end
+
     if params[:sort_absence] == "true"
       the_day_attendance_datas = AttendanceBook.where(start_time: params[:day_date])
       the_kids = Kid.where(team_id: Team.find_by(name: params[:class_name]))

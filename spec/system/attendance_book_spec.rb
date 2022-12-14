@@ -12,6 +12,7 @@ RSpec.describe '出席一覧カレンダー機能', type: :system do
       click_on "クラスの追加"
       fill_in 'team[name]', with: 'team'
       fill_in 'team[kids_attributes][0][name]', with: 'kid1'
+      # fill_in 'team[kids_attributes][1][name]', with: 'kid2'
       click_on "登録"
       click_on "出席一覧カレンダー"
       
@@ -21,8 +22,8 @@ RSpec.describe '出席一覧カレンダー機能', type: :system do
       click_on "・team"
       select '欠席'
       select '出席'
+      sleep(1)
       click_on "commit"
-      # binding.irb
       expect(page).to have_content '出席確認できました'
       end
     end

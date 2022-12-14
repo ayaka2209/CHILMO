@@ -1,5 +1,6 @@
 <div class="user_info">
   <%= form_with(model: post, local: true) do |form| %>
+
     <% if post.errors.any? %>
       <div id="error_explanation">
         <h4><%= pluralize(post.errors.count, "件のエラー") %>が発生したため送信されませんでした</h4>

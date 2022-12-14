@@ -14,8 +14,8 @@
 <hr>
 <tbody>
   <div class="container">
-  <div><strong><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></strong></div>
-  <div><strong><%= @team_name %></strong></div>
+  <div><h6><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></h6></div>
+  <div><h6><%= @team_name %></h6></div>
   <% @attendancebooks_teams&.each do |attendancebook| %>
     <div class="container">
       <strong><%= Kid.find_by(id: attendancebook.kid_id).name %></strong>

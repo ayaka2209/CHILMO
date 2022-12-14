@@ -1,9 +1,9 @@
 <h1 class="all">園児出席一覧カレンダー</h1>
-<%# <% if current_user.find(@users.role?) %>
+<% if current_user.role %>
   <h5>出席簿を入力するには、該当のクラス名をクリックしてください。</h5>
-<%# <% else %>
-  <%# <h5>カレンダーに表記されているお子さんのクラス名をクリックしてください。</h5> %>
-<%# <% end %>
+<% else %>
+  <h5>カレンダーに表記されているお子さんのクラス名をクリックしてください。出席状況確認できます。</h5>
+<% end %>
 <% Team.all.each do |team| %>
   <div>
     <% unless @done_attendance_kids & team.kids.pluck(:id) == team.kids.pluck(:id) %>
@@ -13,7 +13,7 @@
 <% end %>
 <hr>
 <tbody>
-  <div class="plan-container">
+  <div class="container">
   <div><strong><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></strong></div>
   <div><strong><%= @team_name %></strong></div>
   <% @attendancebooks_teams&.each do |attendancebook| %>
@@ -23,7 +23,7 @@
     </div>
   <% end %>
 </tbody>
-<%= link_to "欠席者を上にソートする", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
+<%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
 
 <hr>
 <div class="calendar">

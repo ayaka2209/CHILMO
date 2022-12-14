@@ -1,5 +1,6 @@
 <div class="user_info">
   <%= form_with(model: post, local: true) do |form| %>
+
     <% if post.errors.any? %>
       <div id="error_explanation">
         <h4><%= pluralize(post.errors.count, "件のエラー") %>が発生したため送信されませんでした</h4>
@@ -17,22 +18,22 @@
     </div>
 
     <div class="field">
-      <%= form.label t('.name') %>
+      <%= form.label :name, "職員名" %>
       <%= form.text_field :name, placeholder: "職員名を入力" %>
     </div>
 
     <div class="field">
-      <%= form.label t('.title') %>
+      <%= form.label :title, "クラス名" %>
       <%= form.text_field :title, placeholder: "クラス名を入力" %>
     </div>
     
     <div class="field">
-      <%= form.label t('.remark') %>
+      <%= form.label :remark, "連絡事項" %>
       <%= form.text_area :remark, placeholder: "連絡事項" %>
     </div>
 
     <div class="field">
-      <%= form.label t('.status') %>
+      <%= form.label t('.status')%>
       <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
     </div>
 

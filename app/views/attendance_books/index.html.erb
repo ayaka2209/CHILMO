@@ -13,7 +13,7 @@
 <% end %>
 <hr>
 <tbody>
-  <div class="plan-container">
+  <div class="container">
   <div><strong><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></strong></div>
   <div><strong><%= @team_name %></strong></div>
   <% @attendancebooks_teams&.each do |attendancebook| %>
@@ -23,7 +23,7 @@
     </div>
   <% end %>
 </tbody>
-<%= link_to "欠席者を上にソートする", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
+<%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
 
 <hr>
 <div class="calendar">

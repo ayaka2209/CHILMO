@@ -1,9 +1,9 @@
 <h1 class="all">園児出席一覧カレンダー</h1>
-<%# <% if current_user.find(@users.role?) %>
-  <h5>出席簿を入力するには、該当のクラス名をクリックしてください。</h5>
-<%# <% else %>
-  <%# <h5>カレンダーに表記されているお子さんのクラス名をクリックしてください。</h5> %>
-<%# <% end %>
+<% if current_user.role %>%
+  <h5>出席簿を入力するには、該当のクラス名をクリックしてください。出席状況確認できます。</h5>
+<% else %>
+  <h5>カレンダーに表記されているお子さんのクラス名をクリックしてください。</h5>
+<% end %>
 <% Team.all.each do |team| %>
   <div>
     <% unless @done_attendance_kids & team.kids.pluck(:id) == team.kids.pluck(:id) %>

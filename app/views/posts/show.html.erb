@@ -11,6 +11,6 @@
   </div>
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Edit', edit_post_path(@post) %>
   <%= link_to 'Back', posts_path %>
 </div>

@@ -10,7 +10,6 @@
     </div>
   <% end %>
 
-  <%# <%= form_with(model: team, local: true) do |form| %>
   <div class="container">
     <%= form.label :クラス名 %>
     <%= form.text_field :name %>
@@ -18,8 +17,6 @@
     <% n = 0 %>
     <%= form.fields_for :kids do |kid| %>
       <h3>園児名<%= n += 1 %></h3>
-
-      <%# <div class="field"> %>
       <%= kid.label :name, "園児名" %>
       <%= kid.text_field :name %>
     <% end %>
@@ -38,11 +35,11 @@
 <% end %>
 
 <style>
-h1{
-  color: rgba(0, 0, 0, 0.5);;
-  margin-top: 0.5em;
-}
-.container{
-  background-color: #fae8f7;;
-}
+  h1{
+    color: rgba(0, 0, 0, 0.5);;
+    margin-top: 0.5em;
+  }
+  .container{
+    background-color: #fae8f7;;
+  }
 </style>

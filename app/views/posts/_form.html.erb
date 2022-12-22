@@ -1,45 +1,57 @@
-<div class="user_info">
-  <%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true) do |form| %>
 
-    <% if post.errors.any? %>
-      <div id="error_explanation">
-        <h4><%= pluralize(post.errors.count, "件のエラー") %>が発生したため送信されませんでした</h4>
-        <ul class="error">
-          <% post.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= form.label t('.start_time') %>
-      <%= form.datetime_field :start_time %>
-    </div>
-
-    <div class="field">
-      <%= form.label :name, "職員名" %>
-      <%= form.text_field :name, placeholder: "職員名を入力" %>
-    </div>
-
-    <div class="field">
-      <%= form.label :title, "クラス名" %>
-      <%= form.text_field :title, placeholder: "クラス名を入力" %>
-    </div>
-    
-    <div class="field">
-      <%= form.label :remark, "連絡事項" %>
-      <%= form.text_area :remark, placeholder: "連絡事項" %>
-    </div>
-
-    <div class="field">
-      <%= form.label t('.status')%>
-      <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit "登録",class: "btn btn-outline-success" %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(post.errors.count, "件のエラー") %>が発生したため送信されませんでした</h4>
+      <ul class="error">
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-  <div class="back"><%= link_to t('.back'), posts_path,class: "btn btn-outline-secondary" %></div>
+
+  <div class="field">
+    <%= form.label t('.start_time') %>
+    <%= form.datetime_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, "職員名" %>
+    <%= form.text_field :name, placeholder: "職員名を入力" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title, "クラス名" %>
+    <%= form.text_field :title, placeholder: "クラス名を入力" %>
+  </div>
+    
+  <div class="field">
+    <%= form.label :remark, "連絡事項" %>
+    <%= form.text_area :remark, placeholder: "連絡事項" %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('.status')%>
+    <%= form.select :status, Post.statuses.keys.to_a,{prompt: "選択してください"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録する", class: "btn col-sm-12 submit_btn" %>
+  </div>
+<% end %>
+
+<div class="contents-title text-center">
+  <button type="button" class="btn btn-outline-light" style="background-color: #c5db97;">
+    <%= link_to t('.back'), posts_path %>
+  </button>
 </div>
+
+<style>
+  .actions{
+  background-color: #fae8f7;;
+  }
+  a {
+  color: #666; 
+  }
+</style>

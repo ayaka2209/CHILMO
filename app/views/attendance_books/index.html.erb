@@ -23,8 +23,9 @@
     </div>
   <% end %>
 </tbody>
-<%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
-
+  <button type="button" class="btn btn-outline-light" style="background-color: #c5db97;">
+    <%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name) %>
+  </button>
 <hr>
 <div class="calendar">
   <%= month_calendar events: @attendancebooks do |date, attendancebooks| %>
@@ -46,10 +47,13 @@
 <% end %>
 
 <style>
-h1{
-  color: #9d32a8;
-}
-h5{
-  background-color: #fae8f7;;
-}
+  h1{
+    color: #9d32a8;
+  }
+  h5{
+    background-color: #fae8f7;;
+  }
+  a {
+  color: #666; 
+  }
 </style>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="contents-title text-center">
   <h1><%= t('.memo') %></h1>
 </div>
 <div class="user_info">
@@ -26,16 +26,20 @@
             <td><%= post.name %></td>
             <td><%= post.title %></td>
             <td><%= post.status %></td>
-            <td><%= link_to t('.edit'), edit_post_path(post), class: "btn btn-warning" %></td>
-            <td><%= link_to t('.show'), post_path(post), class: "btn btn-warning" %></td>
-            <td><%= link_to t('.delete'), post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+            <td><%= link_to t('.edit'), edit_post_path(post), class: "btn btn-outline-secondary" %></td>
+            <td><%= link_to t('.show'), post_path(post), class: "btn btn-outline-secondary" %></td>
+            <td><%= link_to t('.delete'), post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   <% end %>
   <br>
-  <%= link_to t('.register_memo'), new_post_path, class: "btn btn-outline-success" %>
+</div>
+<div class="contents-title text-center">
+  <button type="button" class="btn btn-outline-light" style="background-color: #c5db97;">
+    <%= link_to t('.register_memo'), new_post_path %>
+  </button>
 </div>
 
 <style>
@@ -46,4 +50,8 @@ h1{
 .container{
   background-color: #fae8f7;;
 }
+
+a {
+  color: #666; 
+  }
 </style>

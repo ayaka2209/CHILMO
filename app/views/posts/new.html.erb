@@ -1,13 +1,20 @@
 <div class="container">
-  <h1>連絡事項</h1>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class = "card">
+        <div class="card-body">
+          <h1>連絡事項</h1>
+            <%= render 'form', post: @post %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<%= render 'form', post: @post %>
-
 <style>
-h1{
-  color: rgba(0, 0, 0, 0.5);;
-}
-.container{
-  background-color: #fae8f7;;
-}
+  h1{
+    color: rgba(0, 0, 0, 0.5);;
+  }
+  .container{
+    background-color: #fae8f7;;
+  }
 </style>

@@ -1,8 +1,17 @@
-<h1><%= t('.edit') %></h1>
-
-<%= render 'form', post: @post %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class = "card">
+        <div class="card-body">
+          <h1><%= t('.edit') %></h1>
+          <%= render 'form', post: @post %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <style>
-h1{
-  color: #9d32a8;
-}
+  h1{
+    color: #9d32a8;
+  }
 </style>

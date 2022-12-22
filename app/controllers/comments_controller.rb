@@ -27,15 +27,15 @@ class CommentsController < ApplicationController
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-      respond_to do |format|
-        if @comment.update(comment_params)
-          flash.now[:notice] = 'コメントが編集されました'
-          format.js { render :index }
-        else
-          flash.now[:notice] = 'コメントの編集に失敗しました'
-          format.js { render :edit }
-        end
+    respond_to do |format|
+      if @comment.update(comment_params)
+        flash.now[:notice] = 'コメントが編集されました'
+        format.js { render :index }
+      else
+        flash.now[:notice] = 'コメントの編集に失敗しました'
+        format.js { render :edit }
       end
+    end
   end
 
   def destroy

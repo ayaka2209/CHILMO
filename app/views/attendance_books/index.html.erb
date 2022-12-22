@@ -14,8 +14,8 @@
 <hr>
 <tbody>
   <div class="container">
-  <div><strong><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></strong></div>
-  <div><strong><%= @team_name %></strong></div>
+  <div><h6><%= @day_date&.to_time&.strftime("%Y年%m月%d日") %></h6></div>
+  <div><h6><%= @team_name %></h6></div>
   <% @attendancebooks_teams&.each do |attendancebook| %>
     <div class="container">
       <strong><%= Kid.find_by(id: attendancebook.kid_id).name %></strong>
@@ -23,8 +23,9 @@
     </div>
   <% end %>
 </tbody>
-<%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name), class: "btn btn-warning" %>
-
+  <button type="button" class="btn btn-outline-light" style="background-color: #c5db97;">
+    <%= link_to "並び替え", attendance_books_path(sort_absence: true, day_date: @day_date, class_name: @team_name) %>
+  </button>
 <hr>
 <div class="calendar">
   <%= month_calendar events: @attendancebooks do |date, attendancebooks| %>
@@ -46,10 +47,13 @@
 <% end %>
 
 <style>
-h1{
-  color: #9d32a8;
-}
-h5{
-  background-color: #fae8f7;;
-}
+  h1{
+    color: #9d32a8;
+  }
+  h5{
+    background-color: #fae8f7;;
+  }
+  a {
+  color: #666; 
+  }
 </style>

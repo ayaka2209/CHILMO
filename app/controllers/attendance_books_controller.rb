@@ -36,10 +36,11 @@ class AttendanceBooksController < ApplicationController
       end
       ContactMailer.contact_mail(team).deliver
       redirect_to attendance_books_path, notice: "出席確認できました！"
-    else
+      else
       redirect_to team_path(id: team_id), notice: "もう一度確認してください！"
     end
   end
+
   private
 
   def require_role

@@ -24,3 +24,4 @@ CarrierWave.configure do |config|
       config.fog_directory = 'chilmo-development'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chilmo-development'
   end
+end
